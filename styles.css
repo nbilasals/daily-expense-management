@@ -1,0 +1,652 @@
+/* ========================================
+   DAILY EXPENSE TRACKER - STYLES
+   Mobile-First Responsive Design
+   ======================================== */
+
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 15px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ========================================
+   CONTAINER & LAYOUT
+   ======================================== */
+.container {
+    max-width: 500px;
+    /* Mobile-first: smaller width */
+    margin: 0 auto;
+}
+
+/* ========================================
+   HEADER SECTION
+   ======================================== */
+header {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+header h1 {
+    color: #4f46e5;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.security-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.badge-icon {
+    font-size: 1rem;
+}
+
+/* ========================================
+   FORM SECTION
+   ======================================== */
+.add-expense-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.add-expense-section h2 {
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.9rem;
+}
+
+.required {
+    color: #ef4444;
+    font-weight: 700;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #9ca3af;
+}
+
+/* Form Row (Amount and Date) */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+/* Submit Button */
+.btn-add {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn-add:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.4);
+}
+
+.btn-add:active {
+    transform: translateY(0);
+}
+
+.btn-icon {
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   TOTAL SECTION
+   ======================================== */
+.total-section {
+    margin-bottom: 20px;
+}
+
+.total-card {
+    background: linear-gradient(135deg, #10b981, #059669);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.total-icon {
+    font-size: 3rem;
+    opacity: 0.9;
+}
+
+.total-content {
+    flex: 1;
+}
+
+.total-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.total-amount {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.total-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+/* Total Amount Animation */
+.total-amount.updated {
+    animation: pulse 0.3s ease-out;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ========================================
+   EXPENSES LIST SECTION
+   ======================================== */
+.expenses-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.section-subtitle {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.expense-list {
+    min-height: 150px;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    color: #999;
+    font-size: 1rem;
+    padding: 50px 20px;
+    line-height: 1.8;
+}
+
+.empty-state-subtitle {
+    font-size: 0.9rem;
+    color: #bbb;
+    font-style: italic;
+}
+
+/* ========================================
+   EXPENSE ITEM
+   ======================================== */
+.expense-item {
+    background: #f9fafb;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border-left: 5px solid #4f46e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease-out;
+}
+
+.expense-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Slide-in animation for new expenses */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.expense-info {
+    flex: 1;
+    min-width: 0;
+    /* Allow text truncation */
+}
+
+.expense-desc {
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 4px;
+    word-wrap: break-word;
+}
+
+.expense-date {
+    color: #666;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.expense-amount {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ef4444;
+    white-space: nowrap;
+}
+
+.btn-delete {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(239, 68, 68, 0.3);
+}
+
+.btn-delete:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);
+}
+
+.btn-delete:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   FOOTER / WARNING SECTION
+   ======================================== */
+footer {
+    margin-top: 20px;
+}
+
+.warning-box {
+    background: rgba(239, 68, 68, 0.95);
+    color: white;
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.warning-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.warning-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.warning-text strong {
+    font-weight: 700;
+}
+
+.footer-info {
+    text-align: center;
+    color: white;
+    font-size: 0.85rem;
+    padding: 10px;
+    opacity: 0.9;
+}
+
+/* ========================================
+   NOTIFICATION SYSTEM
+   ======================================== */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #10b981;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    font-weight: 600;
+    max-width: 300px;
+    word-wrap: break-word;
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - TABLET & DESKTOP
+   ======================================== */
+@media (min-width: 768px) {
+    body {
+        padding: 30px;
+    }
+
+    .container {
+        max-width: 600px;
+    }
+
+    header {
+        padding: 35px 30px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .add-expense-section,
+    .expenses-section {
+        padding: 30px;
+    }
+
+    .total-card {
+        padding: 30px;
+    }
+
+    .total-amount {
+        font-size: 3rem;
+    }
+
+    .expense-item {
+        padding: 20px;
+    }
+
+    .form-row {
+        gap: 15px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - LARGE DESKTOP
+   ======================================== */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 700px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - SMALL MOBILE
+   ======================================== */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .total-amount {
+        font-size: 2rem;
+    }
+
+    .total-icon {
+        font-size: 2rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .expense-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .expense-amount {
+        font-size: 1.1rem;
+    }
+
+    .btn-delete {
+        align-self: flex-end;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .notification {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .btn-add,
+    .btn-delete,
+    footer {
+        display: none;
+    }
+
+    .add-expense-section form {
+        display: none;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY IMPROVEMENTS
+   ======================================== */
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+    outline: 3px solid #4f46e5;
+    outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .form-group input {
+        border-width: 3px;
+    }
+
+    .btn-add,
+    .btn-delete {
+        border: 2px solid currentColor;
+    }
+}
+
+/* ========================================
+   DARK MODE SUPPORT (OPTIONAL)
+   ======================================== */
+@media (prefers-color-scheme: dark) {
+    /* Uncomment to enable dark mode
+    body {
+        background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    }
+    
+    .add-expense-section,
+    .expenses-section,
+    header {
+        background: rgba(30, 30, 30, 0.95);
+        color: #e5e7eb;
+    }
+    
+    .form-group input {
+        background: #1f2937;
+        border-color: #374151;
+        color: white;
+    }
+    */
+}

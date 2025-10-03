@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Daily Expense Tracker - Secure, session-only expense tracking for young professionals">
+    <meta name="author" content="Expense Tracker">
+    <title> Daily Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Header Section -->
+        <header>
+            <h1> Daily Expense Tracker</h1>
+            <p>Track your daily spending - Data cleared after session</p>
+            <div class="security-badge">
+                <span class="badge-icon"></span>
+                <span class="badge-text">No Data Stored Locally</span>
+            </div>
+        </header>
+
+        <!-- Add Expense Form Section -->
+        <section class="add-expense-section">
+            <h2>Add New Expense</h2>
+            <form id="expenseForm" autocomplete="off">
+                <!-- Description Input -->
+                <div class="form-group">
+                    <label for="description">
+                        Description
+                        <span class="required">*</span>
+                    </label>
+                    <input type="text" id="description" name="description"
+                        placeholder="e.g., Coffee, Lunch, Transport, Books" maxlength="100" required
+                        aria-label="Expense description">
+                </div>
+
+                <!-- Amount and Date Row -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="amount">
+                            Amount ($)
+                            <span class="required">*</span>
+                        </label>
+                        <input type="number" id="amount" name="amount" placeholder="0.00" step="0.01" min="0.01"
+                            max="999999.99" required aria-label="Expense amount in dollars">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">
+                            Date
+                            <span class="required">*</span>
+                        </label>
+                        <input type="date" id="date" name="date" required aria-label="Expense date">
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-add">
+                    <span class="btn-icon">➕</span>
+                    <span class="btn-text">Add Expense</span>
+                </button>
+            </form>
+        </section>
+
+        <!-- Total Display Section -->
+        <section class="total-section">
+            <div class="total-card">
+                <div class="total-icon"></div>
+                <div class="total-content">
+                    <div class="total-label">Total Expenses</div>
+                    <div class="total-amount" id="totalAmount">$0.00</div>
+                    <div class="total-subtitle">This session only</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expenses List Section -->
+        <section class="expenses-section">
+            <div class="section-header">
+                <h2>Your Expenses</h2>
+                <div class="section-subtitle">Showing all expenses from this session</div>
+            </div>
+
+            <div class="expense-list" id="expenseList">
+                <p class="empty-state">
+                    No expenses added yet.<br>
+                    <span class="empty-state-subtitle">Start tracking your spending above!</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Session Warning Footer -->
+        <footer>
+            <div class="warning-box">
+                <span class="warning-icon"></span>
+                <p class="warning-text">
+                    <strong>Important:</strong> All data will be permanently cleared when you close this page.
+                    This is for your privacy and security.
+                </p>
+            </div>
+            <div class="footer-info">
+                <p>Built with privacy and simplicity in mind • No tracking • No storage</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
